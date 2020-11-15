@@ -4,7 +4,7 @@ class Elastic {
             bodyA:bodyA,
             pointB:pointB,
             stiffness:0.04,
-            length:200
+            length:1
         }
         this.elastic = Matter.Constraint.create(elastic_options);
         World.add(world, this.elastic);
