@@ -1,4 +1,5 @@
 
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -55,10 +56,29 @@ function draw() {
   mango5.display();
   stone1.display();
  //elastic.display();
+ /*detectCollision(stone1, mango1);
+ detectCollision(stone1, mango2);
+ detectCollision(stone1, mango3);
+ detectCollision(stone1, mango4);
+ detectCollision(stone1, mango5);*/
   
   drawSprites();
  
 }
 
 
+/*function detectCollision(lstone,lmango){
+	mangoBodyPosition = lmango.body.position;
+	stoneBodyPosition = lstone.body.position;
+	var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
+	if(distance<=lmango.x+lstone.x){
+		Matter.Body.setStatic(lmango.body,false);
+	}
+}*/
 
+/*function keyPressed(){
+	if(keyCode===32){
+		Matter.Body.setPosition(stone1.body, {x:235, y:420})
+		elastic.attach(stone1.body);
+	}
+}*/
