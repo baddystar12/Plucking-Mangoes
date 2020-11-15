@@ -1,5 +1,4 @@
 
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -11,7 +10,7 @@ var boyImage;
 var stone1;
 var tree1;
 var ground;
-var elastic;
+var elastic1;
 
 function preload(){
 boyImage = loadImage("Plucking mangoes/boy.png");
@@ -32,7 +31,7 @@ function setup() {
 	mango4 = new Mango(750, 455, 40);
 	mango5 = new Mango(700, 400, 40);
 	stone1 = new Stone(16, 569, 20);
-	//elastic = new Elastic(stone.body, {x:150, y:150});
+	elastic1 = new Elastic(stone1.body, {x:150, y:150});
 	
 
 	Engine.run(engine);
@@ -55,7 +54,7 @@ function draw() {
   mango4.display();
   mango5.display();
   stone1.display();
- //elastic.display();
+ elastic1.display();
  /*detectCollision(stone1, mango1);
  detectCollision(stone1, mango2);
  detectCollision(stone1, mango3);
@@ -69,16 +68,24 @@ function draw() {
 
 /*function detectCollision(lstone,lmango){
 	mangoBodyPosition = lmango.body.position;
-	stoneBodyPosition = lstone.body.position;
-	var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
+	stone1BodyPosition = lstone.body.position;
+	var distance = dist(stone1BodyPosition.x, stone1BodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
 	if(distance<=lmango.x+lstone.x){
 		Matter.Body.setStatic(lmango.body,false);
 	}
 }*/
 
-/*function keyPressed(){
-	if(keyCode===32){
+function keyPressed(){
+	if(keyCode===SPACE){
 		Matter.Body.setPosition(stone1.body, {x:235, y:420})
 		elastic.attach(stone1.body);
 	}
-}*/
+}
+
+function mouseDragged(){
+	Matter.Body.setPosition(stone1.body, {x:mouseX, y:mouseY});
+}
+
+function mouseReleased(){
+	elastic1.fly();
+}
