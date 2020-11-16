@@ -55,25 +55,25 @@ function draw() {
   mango5.display();
   stone1.display();
  elastic1.display();
- /*detectCollision(stone1, mango1);
+ detectCollision(stone1, mango1);
  detectCollision(stone1, mango2);
  detectCollision(stone1, mango3);
  detectCollision(stone1, mango4);
- detectCollision(stone1, mango5);*/
+ detectCollision(stone1, mango5);
   
   drawSprites();
  
 }
 
 
-/*function detectCollision(lstone,lmango){
+function detectCollision(lstone,lmango){
 	mangoBodyPosition = lmango.body.position;
 	stone1BodyPosition = lstone.body.position;
 	var distance = dist(stone1BodyPosition.x, stone1BodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
 	if(distance<=lmango.x+lstone.x){
 		Matter.Body.setStatic(lmango.body,false);
 	}
-}*/
+}
 
 function keyPressed(){
 	if(keyCode===SPACE){
