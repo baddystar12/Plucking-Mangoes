@@ -30,8 +30,8 @@ function setup() {
 	mango3 = new Mango(670, 460, 40);
 	mango4 = new Mango(750, 455, 40);
 	mango5 = new Mango(700, 400, 40);
-	stone1 = new Stone(16, 569, 20);
-	elastic1 = new Elastic(stone1.body, {x:150, y:150});
+	stone1 = new Stone(56, 569, 20);
+	elastic1 = new Elastic(stone1.body, {x:56, y:569});
 	
 
 	Engine.run(engine);
@@ -45,7 +45,7 @@ function draw() {
   Engine.update(engine);
 
   imageMode(CENTER);
-  image(boyImage, 60, 625, 150, 250); 
+  image(boyImage, 100, 625, 150, 250); 
   ground.display();
   tree1.display();
   mango1.display();
