@@ -8,12 +8,13 @@ const Constraint = Matter.Constraint;
 var mango1, mango2, mango3, mango4, mango5;
 var boyImage;
 var stone1;
-var tree1;
+var tree1, treeImage;
 var ground;
 var elastic1;
 
 function preload(){
 boyImage = loadImage("Plucking mangoes/boy.png");
+treeImage = loadImage("Plucking mangoes/tree.png")
 }
 
 
@@ -24,13 +25,13 @@ function setup() {
 	world = engine.world;
 
 	ground = new Ground(400, 695, 800, 20);
-	tree1 = new Tree(650, 515, 350);
+	//tree1 = new Tree(650, 515, 350);
 	mango1 = new Mango(560, 470, 40);
 	mango2 = new Mango(610, 420, 40);
 	mango3 = new Mango(670, 460, 40);
 	mango4 = new Mango(750, 455, 40);
 	mango5 = new Mango(700, 400, 40);
-	stone1 = new Stone(56, 569, 20);
+	stone1 = new Stone(56, 569, 40);
 	elastic1 = new Elastic(stone1.body, {x:56, y:569});
 	
 
@@ -46,8 +47,9 @@ function draw() {
 
   imageMode(CENTER);
   image(boyImage, 100, 625, 150, 250); 
+  image(treeImage, 650, 515, 350, 350);
   ground.display();
-  tree1.display();
+  //tree1.display();
   mango1.display();
   mango2.display();
   mango3.display();
@@ -70,7 +72,7 @@ function detectCollision(lstone,lmango){
 	mangoBodyPosition = lmango.body.position;
 	stone1BodyPosition = lstone.body.position;
 	var distance = dist(stone1BodyPosition.x, stone1BodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
-	if(distance<=lmango.x+lstone.x){
+	if(distance<=lmango.radius+lstone.radius){
 		Matter.Body.setStatic(lmango.body,false);
 	}
 }
