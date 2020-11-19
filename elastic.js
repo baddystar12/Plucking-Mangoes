@@ -13,6 +13,9 @@ class Elastic {
     fly(){
         this.elastic.bodyA = null;
     }
+    attach(body){
+        bodyA = body;
+    }
     display(){
         if(this.elastic.bodyA){
             var pointA = this.elastic.bodyA.position;
