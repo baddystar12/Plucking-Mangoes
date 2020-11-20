@@ -78,9 +78,9 @@ function detectCollision(lstone,lmango){
 }
 
 function keyPressed(){
-	if(keyCode===SPACE){
+	if(keyCode===32){
 		Matter.Body.setPosition(stone1.body, {x:235, y:420})
-		elastic.attach(stone1.body);
+		elastic1.attach(stone1.body);
 	}
 }
 
