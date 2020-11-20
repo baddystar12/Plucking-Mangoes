@@ -14,7 +14,7 @@ class Elastic {
         this.elastic.bodyA = null;
     }
     attach(body){
-        bodyA = body;
+        this.elastic.bodyA = body;
     }
     display(){
         if(this.elastic.bodyA){
